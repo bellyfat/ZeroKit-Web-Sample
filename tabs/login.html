@@ -1,0 +1,37 @@
+<h1>Please sign in</h1>
+<div id="loginContent" class="hidden">
+  <div class="ui form">
+    <input type="text" id="username" placeholder="Username" />
+    <!-- Placeholder for password iFrame -->
+    <div id="zkitLogin"></div>
+
+    <!-- Login button -->
+    <button id="login" onclick="login($('#username').val())" class="ui primary button">Log in</button>
+
+    <p id="gotoReg">Don't have a user yet? <a href="register.html">Sign up!</a></p>
+    <div id="loginResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+  </div>
+
+  <div id="loggedIn" class="hidden">
+    <p>You should log in on the server side as well</p>
+    <button id="serverLogin" onclick="serverLogin()" class="ui primary button">Server log in</button>
+    <div id="serverLoginResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+
+    <div id="serverLoggedIn" class="hidden">
+      <p>Now you are logged in on the server as well.</p>
+      <p>You should create a <a href="#/tresor.html">tresor</a> or go straight to <a href="#/decrypt.html">decrypting</a></p>
+    </div>
+  </div>
+
+</div>
+
+<div id="loginLoader" class="ui active centered loader"></div>
+
+<script type="application/javascript" src="/tabs/login.js"></script>
+<script type="text/javascript">
+  // We remove the loader after the iframe is loaded
+  $("#zkitLogin").find("iframe").on("load", function() {
+    $("#loginLoader").addClass("hidden");
+    $("#loginContent").removeClass("hidden");
+  });
+</script>

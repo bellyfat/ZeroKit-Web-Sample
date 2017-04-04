@@ -1,0 +1,28 @@
+<h1 class="ui header">Sign up</h1>
+<div id="regContent" class="ui form" class="hidden">
+  <!-- Username field -->
+  <input type="text" id="alias" placeholder="Username" />
+
+  <div id="regIframe">
+    <!-- The 0_kit SDK will load the iframe with the password input here -->
+  </div>
+
+  <!-- Button to start registration process -->
+  <button onclick="register($('#alias').val());" class="ui button primary">Register</button>
+  <div id="registerResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+</div>
+<!-- This panel will show up after successful registration -->
+<div id="nextStep" class="hidden">
+  <p>Registration successful.</p>
+  <p><a href="#/login.html">You can log in now.</a></p>
+</div>
+<div id="regLoader" class="ui active centered loader"></div>
+
+<script type="text/javascript" src="/tabs/register.js"></script>
+<script type="text/javascript">
+  // We remove the loader after the iframe is loaded
+  $("#regIframe").find("iframe").on("load", function() {
+    $("#regLoader").addClass("hidden");
+    $("#regContent").removeClass("hidden");
+  });
+</script>

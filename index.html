@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>ZeroKit Web Sample</title>
+
+  <!-- Load some common tools & styles -->
+  <link rel="stylesheet" type="text/css" href="assets/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"
+          integrity="sha256-mLCPYHfNREhSETFQGuowilY3zBAZGnDO2cxCnCEm8/I="
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="common.css">
+  <script src="assets/semantic.min.js"></script>
+  <script src="config.js"></script>
+  <script src="common.js"></script>
+</head>
+<body>
+<div class="ui pointing menu top fixed">
+  <div class="ui container">
+    <a data-tab="register.html" class="item">Register</a>
+    <a data-tab="login.html" class="item">Log in</a>
+    <a data-tab="tresor.html" class="item">Create a tresor</a>
+    <a data-tab="encrypt.html" class="item">Encrypt</a>
+    <a data-tab="decrypt.html" class="item">Decrypt</a>
+    <a data-tab="share.html" class="item">Share</a>
+    <div id="logoutBtn" class="hidden right item">
+      <button class="ui compact basic button" onclick="serverLogout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div class="ui main center aligned text container hidden">
+  <div class="ui bottom attached tab" data-tab="register.html"></div>
+  <div class="ui bottom attached tab" data-tab="login.html"></div>
+  <div class="ui bottom attached tab" data-tab="tresor.html"></div>
+  <div class="ui bottom attached tab" data-tab="encrypt.html"></div>
+  <div class="ui bottom attached tab" data-tab="decrypt.html"></div>
+  <div class="ui bottom attached tab" data-tab="share.html"></div>
+</div>
+
+<script type="application/javascript">
+  $('.menu.top .item').tab({
+    auto: 'true',
+    path: '/tabs/',
+    cache: false,
+    evaluateScripts: true,
+    alwaysRefresh: true,
+    debug: true,
+    history: true
+  })
+</script>
+<div id="loader" class="ui active centered loader"></div>
+</body>
+</html>

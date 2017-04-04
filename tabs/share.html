@@ -1,0 +1,21 @@
+<h2>Share</h2>
+<p>
+  Text (and all data) encrypted by ZeroKit is strictly bound to a tresor. All members of the tresor can decrypt any
+  data encrypted by that tresor, even if they were added to it after encryption.
+</p>
+
+<div id="sharePanel" class="ui form">
+  <label for="shareTresorId">Tresor ID: </label>
+  <input type="text" id="shareTresorId"/>
+  <label for="shareUserName">User to invite: </label>
+  <input type="text" id="shareUserName"/>
+  <button onclick="share($('#shareTresorId').val(), $('#shareUserName').val());" class="ui primary button">Share</button>
+</div>
+<div id="shareResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+
+<script type="application/javascript" src="/tabs/share.js"></script>
+<script type="text/javascript">
+  // Prefill tresor id from session storage
+  if (sessionStorage.getItem("tresorId"))
+    $("#shareTresorId").val(sessionStorage.getItem("tresorId"));
+</script>

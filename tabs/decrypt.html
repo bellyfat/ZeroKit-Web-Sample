@@ -1,0 +1,32 @@
+<div>
+  <p>You can paste encrypted text in here or retrieve it from the server if you stored it.</p>
+</div>
+<!-- We'll decrypt the text here -->
+<div id="decryptPanel" class="ui form">
+
+  <label for="decDataId">Data Id:</label>
+  <input type="text" id="decDataId" />
+  <button onclick="getData($('#decDataId').val());" class="ui primary button">Get data</button>
+
+  <label for="encryptedText">Encrypted text:</label>
+  <textarea rows="4" id="encryptedText"></textarea>
+  <button onclick="decrypt($('#encryptedText').val());" class="ui primary button">Decrypt</button>
+
+  <div id="decryptionResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+  <div id="decNextStep" class="hidden ui text container justified">
+    <p>
+      You can try decrypting this text with a different user by opening a different browser (or the same one in incognito mode).
+      You'll have to register and login with a different user then paste the above encrypted text into their decryption page.
+    </p>
+    You can share the tresor - and the data - with another user at the <a href="#/share.html">share tab</a>
+  </div>
+</div>
+
+<script type="text/javascript" src="/tabs/decrypt.js"></script>
+<script type="text/javascript">
+  if (sessionStorage.getItem("cipherText"))
+    $("#encryptedText").val(sessionStorage.getItem("cipherText"));
+
+  if (sessionStorage.getItem("dataId"))
+    $("#decDataId").val(sessionStorage.getItem("dataId"));
+</script>

@@ -1,0 +1,50 @@
+.hidden {
+    display: none!important;
+}
+
+.ui.button {
+    margin-top: 0.5em;
+}
+
+pre {
+    text-align: left;
+    min-width: 20rem;
+}
+
+iframe {
+    border: none;
+}
+
+label {
+    display: block;
+    margin: 0.5em;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    margin: 0.5em
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.main.container {
+    margin-top: 5rem;
+}
+
+.right.menu {
+    padding: 0.2rem;
+}
+
+#regIframe iframe {
+    height: 5rem;
+    width: 100%;
+}
+
+#zkitlogin iframe {
+    height: 2.5rem;
+    width: 100%;
+}
+

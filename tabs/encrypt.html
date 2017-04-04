@@ -1,0 +1,32 @@
+<h2>Encrypt</h2>
+<p>
+  Text (and all data) encrypted by ZeroKit is strictly bound to a tresor. All members of the tresor can decrypt any
+  data encrypted by that tresor, even if they were added to it after encryption.
+</p>
+
+<div class="ui form">
+<!-- We'll encrypt a line of text here. -->
+  <div id="encryptPanel">
+    <label for="encTresorId">Tresor ID: </label>
+    <input type="text" id="encTresorId"/>
+    <label for="plainText">Text to encrypt: </label>
+    <textarea rows="4" id="plainText"></textarea><br />
+    <button onclick="encrypt($('#encTresorId').val(), $('#plainText').val());" class="ui primary button">Encrypt</button>
+    <div id="encResults" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+  </div>
+  <div id="encNextStep" class="hidden justified text container">
+    <p>You can store this data on the server to avoid copy-pasting</p>
+    <input type="text" id="dataId" />
+    <button onclick="store($('#encTresorId').val(),
+                           $('#dataId').val(),
+                           sessionStorage.getItem('cipherText'))" class="ui button">Store</button>
+    <div id="storeRes" class="ui message hidden"><div class="ui left aligned header"></div><pre class="body"></pre></div>
+    <p>Try and <a href="#/decrypt.html">decrypt</a> it.</p>
+  </div>
+</div>
+<script type="text/javascript">
+  // Prefill tresor id from session storage
+  if (sessionStorage.getItem("tresorId"))
+    $("#encTresorId").val(sessionStorage.getItem("tresorId"));
+</script>
+<script type="text/javascript" src="/tabs/encrypt.js"></script>
