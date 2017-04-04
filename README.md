@@ -1,10 +1,12 @@
 #ZeroKit Web Sample
+
 This repository is a template of a basic example application that shows you how to use 
 ZeroKit for zero knowledge authentication and end-to-end encryption.
 
 It makes use of the [ZeroKit sample backend](https://travis-ci.org/tresorit/ZeroKit-NodeJs-backend-sample)
   
 ### Supported browsers
+
 We recommend to use the latest Chrome or Firefox for testing.
 A full list of supported browsers:
 - Chrome 38+
