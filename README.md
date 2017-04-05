@@ -1,4 +1,4 @@
-#ZeroKit Web Sample
+# ZeroKit Web Sample
 
 This repository is a template of a basic example application that shows you how to use 
 ZeroKit for zero knowledge authentication and end-to-end encryption.
