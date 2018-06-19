@@ -1,3 +1,5 @@
+**Notice:** This project is discontinued and no longer maintained nor supported by Tresorit. This repository only exists for archival purposes.
+***
 # ZeroKit Web Sample
 
 This repository is a template of a basic example application that shows you how to use 
